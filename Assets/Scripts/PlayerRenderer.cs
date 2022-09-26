@@ -20,7 +20,6 @@ public class PlayerRenderer : MonoBehaviour {
     private void Update() {
         animator.SetBool("walking", isWalking);
         animator.SetBool("landed", pcon.landed);
-        animator.SetBool("rangeAttack", pcon.attacking);
 
         transform.rotation = Quaternion.Lerp(transform.rotation, pcon.rotation, Time.deltaTime * turnSpeed);
 
