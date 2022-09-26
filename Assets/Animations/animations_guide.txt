@@ -1,0 +1,1 @@
+[Guide] Models>Characters 에 있는 파일들을 unpack 하여 Animations들을 여기 모아보세요
