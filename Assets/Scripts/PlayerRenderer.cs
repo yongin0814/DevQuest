@@ -11,6 +11,7 @@ public class PlayerRenderer : MonoBehaviour {
     [Header("Settings")]
     public float turnSpeed = 3f;
 
+    public bool rangeAttack;
     private bool isWalking;
 
     private void Awake() {
@@ -20,6 +21,7 @@ public class PlayerRenderer : MonoBehaviour {
     private void Update() {
         animator.SetBool("walking", isWalking);
         animator.SetBool("landed", pcon.landed);
+        animator.SetBool("rangeAttack", rangeAttack);
 
         transform.rotation = Quaternion.Lerp(transform.rotation, pcon.rotation, Time.deltaTime * turnSpeed);
 

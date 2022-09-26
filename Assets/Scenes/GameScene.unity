@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5187,6 +5187,7 @@ MonoBehaviour:
   walkParticle: {fileID: 317827133}
   animator: {fileID: 251145612}
   turnSpeed: 8
+  rangeAttack: 0
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -5541,6 +5542,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2927004425767961865, guid: dbd28e26685c8c84cba6814af11fb07a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752701351992641531, guid: dbd28e26685c8c84cba6814af11fb07a, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9114973182239481715, guid: dbd28e26685c8c84cba6814af11fb07a, type: 3}
@@ -10487,6 +10492,7 @@ MonoBehaviour:
   walkParticle: {fileID: 2749362623041500227}
   animator: {fileID: 2749362623592354979}
   turnSpeed: 8
+  rangeAttack: 0
 --- !u!1001 &2749362623592354977
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10637,13 +10643,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 6.5
-  jumpAmount: 4
+  jumpAmount: 8
   state: 0
   nextState: 0
   animator: {fileID: 0}
   landed: 0
   moving: 0
-  attacking: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &7903210505383763614
 GameObject:
