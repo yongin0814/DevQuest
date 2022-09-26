@@ -7,8 +7,8 @@ public class PlayerControl : MonoBehaviour {
     //간단한 fsm state방식으로 동작하는 Player Controller입니다. Fsm state machine에 대한 더 자세한 내용은 세션 3회차에서 배울 것입니다!
     //지금은 state가 3개뿐이지만 3회차 세션에서 직접 state를 더 추가하는 과제가 나갈 예정입니다.
     [Header("Settings")]
-    [SerializeField] private float moveSpeed = 15f;
-    [SerializeField] private float jumpAmount = 6f;
+    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float jumpAmount = 4f;
 
     public enum State {
         none,
@@ -89,20 +89,20 @@ public class PlayerControl : MonoBehaviour {
 
     //WASD 인풋을 처리하는 함수
     private void UpdateInput() {
-        Vector3 vel = rigid.velocity;
+        Vector3 move = Vector3.zero;
         if (Input.GetKey(KeyCode.W)) {
-            vel += ForwardVector() * moveSpeed * Time.deltaTime;
+            move += ForwardVector() * 1;
         }
         if (Input.GetKey(KeyCode.S)) {
-            vel += ForwardVector() * moveSpeed * -1 * Time.deltaTime;
+            move += ForwardVector() * -1;
         }
         if (Input.GetKey(KeyCode.D)) {
-            vel += RightVector() * moveSpeed * Time.deltaTime;
+            move += RightVector() * 1;
         }
         if (Input.GetKey(KeyCode.A)) {
-            vel += RightVector() * moveSpeed * -1 * Time.deltaTime;
+            move += RightVector() * -1;
         }
-        rigid.velocity = vel;
+        rigid.MovePosition(transform.position + move.normalized * Time.deltaTime * moveSpeed);
     }
 
     //카메라 기준으로 앞과 우측 벡터를 계산해주는 함수
