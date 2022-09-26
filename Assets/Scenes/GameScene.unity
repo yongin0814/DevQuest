@@ -507,6 +507,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 631fe05f66aa70443a2f0b52d913c0d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distance: 5
+  height: 2.5
+  panSpeed: 90
 --- !u!1 &1114249005
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,7 +620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f684215d35fd864f9e3186f1a348cc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 6.5
   jumpAmount: 4
   state: 0
   nextState: 0
