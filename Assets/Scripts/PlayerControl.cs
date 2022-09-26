@@ -21,7 +21,13 @@ public class PlayerControl : MonoBehaviour {
     public State nextState = State.none;
     private float stateTime;
 
+    public PlayerRenderer animator;
+
     public bool landed = false, moving = false;
+    public bool attacking = false;
+    //1회차 과제에서 공격 애니메이션을 추가하고 싶다면, 공격 중에는 attacking를 참으로 설정하거나, 공격 시작시 animator.MeleeAttack()을 호출하세요.
+    //전자는 참일 동안 원거리 공격 애니메이션을, 후자는 호출 시 근거리 공격 애니메이션을 재생합니다.
+    //구현 자체는 PlayerRenderer.cs를 참조하세요.
     public Quaternion rotation = Quaternion.identity;
     private Rigidbody rigid;
     private Collider col;
@@ -71,6 +77,7 @@ public class PlayerControl : MonoBehaviour {
                     Vector3 vel = rigid.velocity;
                     vel.y = jumpAmount;
                     rigid.velocity = vel;
+                    animator.Jump();
                     break;
                 //insert code here...
             }

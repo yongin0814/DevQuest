@@ -268,6 +268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pcon: {fileID: 1178786661}
   walkParticle: {fileID: 509327952}
+  animator: {fileID: 2125535924}
   turnSpeed: 8
 --- !u!1 &509327949
 GameObject:
@@ -5390,8 +5391,10 @@ MonoBehaviour:
   jumpAmount: 4
   state: 0
   nextState: 0
+  animator: {fileID: 0}
   landed: 0
   moving: 0
+  attacking: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &1783420361
 GameObject:
@@ -5615,6 +5618,11 @@ PrefabInstance:
 --- !u!4 &2125535923 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3981559159234195482, guid: 26ba6f7c79fc25b4da2500febd439d5a, type: 3}
+  m_PrefabInstance: {fileID: 2125535922}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2125535924 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3981559159234195483, guid: 26ba6f7c79fc25b4da2500febd439d5a, type: 3}
   m_PrefabInstance: {fileID: 2125535922}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4012557696555996927

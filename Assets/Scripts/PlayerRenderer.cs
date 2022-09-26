@@ -6,13 +6,22 @@ public class PlayerRenderer : MonoBehaviour {
     [Header("Preset Fields")]
     public PlayerControl pcon;
     public ParticleSystem walkParticle;
+    public Animator animator;
 
     [Header("Settings")]
     public float turnSpeed = 3f;
 
     private bool isWalking;
 
+    private void Awake() {
+        pcon.animator = this;
+    }
+
     private void Update() {
+        animator.SetBool("walking", isWalking);
+        animator.SetBool("landed", pcon.landed);
+        animator.SetBool("rangeAttack", pcon.attacking);
+
         transform.rotation = Quaternion.Lerp(transform.rotation, pcon.rotation, Time.deltaTime * turnSpeed);
 
         if(pcon.landed && pcon.moving) {
@@ -28,5 +37,13 @@ public class PlayerRenderer : MonoBehaviour {
                 walkParticle.Stop();
             }
         }
+    }
+
+    public void MeleeAttack() {
+        animator.SetTrigger("meleeAttack");
+    }
+
+    public void Jump() {
+        animator.SetTrigger("jump");
     }
 }
