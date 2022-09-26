@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerControl : MonoBehaviour {
+    private static float HEIGHT = 2f;
     //간단한 fsm state방식으로 동작하는 Player Controller입니다. Fsm state machine에 대한 더 자세한 내용은 세션 3회차에서 배울 것입니다!
     //지금은 state가 3개뿐이지만 3회차 세션에서 직접 state를 더 추가하는 과제가 나갈 예정입니다.
     [Header("Settings")]
     [SerializeField] private float moveSpeed = 3f;
-    [SerializeField] private float jumpAmount = 20f;
+    [SerializeField] private float jumpAmount = 6f;
 
     public enum State {
         none,
@@ -21,12 +22,14 @@ public class PlayerControl : MonoBehaviour {
     private float stateTime;
 
     public bool landed = false;
-    [System.NonSerialized] public Rigidbody rigid;
+    private Rigidbody rigid;
+    private Collider col;
     private Transform camt;
 
     private void Start() {
         camt = FindObjectOfType<Camera>().transform;
         rigid = GetComponent<Rigidbody>();
+        col = GetComponent<Collider>();
 
         state = State.none;
         nextState = State.idle;
@@ -63,7 +66,9 @@ public class PlayerControl : MonoBehaviour {
             nextState = State.none;
             switch (state) {
                 case State.jump:
-                    rigid.AddForce(Vector3.up * jumpAmount, ForceMode.VelocityChange);
+                    Vector3 vel = rigid.velocity;
+                    vel.y = jumpAmount;
+                    rigid.velocity = vel;
                     break;
                 //insert code here...
             }
@@ -77,9 +82,12 @@ public class PlayerControl : MonoBehaviour {
 
     //땅에 닿았는지 여부를 확인하고 landed를 설정해주는 함수
     private void CheckLanded() {
-
+        //발 위치에 작은 구를 하나 생성에 그 구에 땅이 닿는지 검사한다.
+        //1 << 6은 Ground의 레이어가 6이기 때문.
+        landed = Physics.CheckSphere(new Vector3(col.bounds.center.x, col.bounds.center.y - ((HEIGHT - 1f) / 2 + 0.15f), col.bounds.center.z), 0.45f, 1 << 6, QueryTriggerInteraction.Ignore);
     }
 
+    //WASD 인풋을 처리하는 함수
     private void UpdateInput() {
 
     }
