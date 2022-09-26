@@ -21,7 +21,8 @@ public class PlayerControl : MonoBehaviour {
     public State nextState = State.none;
     private float stateTime;
 
-    public bool landed = false;
+    public bool landed = false, moving = false;
+    public Quaternion rotation = Quaternion.identity;
     private Rigidbody rigid;
     private Collider col;
     private Transform camt;
@@ -34,6 +35,7 @@ public class PlayerControl : MonoBehaviour {
         state = State.none;
         nextState = State.idle;
         stateTime = 0f;
+        rotation = transform.rotation;
     }
 
     private void Update() {
@@ -90,6 +92,7 @@ public class PlayerControl : MonoBehaviour {
     //WASD 인풋을 처리하는 함수
     private void UpdateInput() {
         Vector3 move = Vector3.zero;
+        moving = false;
         if (Input.GetKey(KeyCode.W)) {
             move += ForwardVector() * 1;
         }
@@ -101,6 +104,10 @@ public class PlayerControl : MonoBehaviour {
         }
         if (Input.GetKey(KeyCode.A)) {
             move += RightVector() * -1;
+        }
+        if (move.x != 0 || move.z != 0) {
+            rotation = Quaternion.LookRotation(move);
+            moving = true;
         }
         rigid.MovePosition(transform.position + move.normalized * Time.deltaTime * moveSpeed);
     }
