@@ -8,6 +8,8 @@ public class DragonManager : MonoBehaviour
     public GameObject firePos;
     public GameObject prefabFire;
     private GameObject fire;
+    public static int shootCount=2;
+
 
     public AudioSource audioPlayer;
 
@@ -21,28 +23,29 @@ public class DragonManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Shoot(); // ½î±â
+        Shoot(); // ì˜ê¸°
 
     }
 
     void Shoot()
     {
-        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject()) // ÁÂÅ¬¸¯ ÇÏ¸é
+        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject()) // ì¢Œí´ë¦­ í•˜ë©´
         {
-            // ¸¶¿ì½º À§Ä¡ ¹Ş±â 
+            // ë§ˆìš°ìŠ¤ ìœ„ì¹˜ ë°›ê¸° 
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit)) // ray·Î ¸ÂÀ¸¸é 
+            if (Physics.Raycast(ray, out hit)) // rayë¡œ ë§ìœ¼ë©´ 
             {
-                dir = ray.direction; // dir¿¡ ´ã¾ÆÁÖ±â
+                dir = ray.direction; // dirì— ë‹´ì•„ì£¼ê¸°
             }
 
-            fire = Instantiate(prefabFire); // ÃÑ¾Ë ¸¸µé°í
-            fire.transform.position = firePos.transform.position; // ½ÃÀÛ À§Ä¡ ÁöÁ¤
+                fire = Instantiate(prefabFire); // ì´ì•Œ ë§Œë“¤ê³ 
+                fire.transform.position = firePos.transform.position; // ì‹œì‘ ìœ„ì¹˜ ì§€ì •
+
 
         }
         
-        fire.transform.Translate(dir * 0.1f); // ÃÑ¾Ë ¹ß»ç
+        fire.transform.Translate(dir * 0.1f); // ì´ì•Œ ë°œì‚¬
 
     }
 
