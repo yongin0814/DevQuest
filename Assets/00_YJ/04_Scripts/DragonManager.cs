@@ -23,29 +23,28 @@ public class DragonManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Shoot(); // ì˜ê¸°
+        Shoot(); // ½î±â
 
     }
 
     void Shoot()
     {
-        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject()) // ì¢Œí´ë¦­ í•˜ë©´
+        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject()) // ÁÂÅ¬¸¯ ÇÏ¸é
         {
-            // ë§ˆìš°ìŠ¤ ìœ„ì¹˜ ë°›ê¸° 
+            // ¸¶¿ì½º À§Ä¡ ¹Ş±â 
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit)) // rayë¡œ ë§ìœ¼ë©´ 
+            if (Physics.Raycast(ray, out hit)) // ray·Î ¸ÂÀ¸¸é 
             {
-                dir = ray.direction; // dirì— ë‹´ì•„ì£¼ê¸°
+                dir = ray.direction; // dir¿¡ ´ã¾ÆÁÖ±â
             }
 
-                fire = Instantiate(prefabFire); // ì´ì•Œ ë§Œë“¤ê³ 
-                fire.transform.position = firePos.transform.position; // ì‹œì‘ ìœ„ì¹˜ ì§€ì •
-
+                fire = Instantiate(prefabFire); // ÃÑ¾Ë ¸¸µé°í
+                fire.transform.position = firePos.transform.position; // ½ÃÀÛ À§Ä¡ ÁöÁ¤
 
         }
         
-        fire.transform.Translate(dir * 0.1f); // ì´ì•Œ ë°œì‚¬
+        fire.transform.Translate(dir * 0.1f); // ÃÑ¾Ë ¹ß»ç
 
     }
 

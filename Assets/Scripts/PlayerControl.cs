@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour {
     private static float HEIGHT = 2f;
-    //ê°„ë‹¨í•œ fsm stateë°©ì‹ìœ¼ë¡œ ë™ì‘í•˜ëŠ” Player Controllerì…ë‹ˆë‹¤. Fsm state machineì— ëŒ€í•œ ë” ìì„¸í•œ ë‚´ìš©ì€ ì„¸ì…˜ 3íšŒì°¨ì—ì„œ ë°°ìš¸ ê²ƒì…ë‹ˆë‹¤!
-    //ì§€ê¸ˆì€ stateê°€ 3ê°œë¿ì´ì§€ë§Œ 3íšŒì°¨ ì„¸ì…˜ì—ì„œ ì§ì ‘ stateë¥¼ ë” ì¶”ê°€í•˜ëŠ” ê³¼ì œê°€ ë‚˜ê°ˆ ì˜ˆì •ì…ë‹ˆë‹¤.
+    //°£´ÜÇÑ fsm state¹æ½ÄÀ¸·Î µ¿ÀÛÇÏ´Â Player ControllerÀÔ´Ï´Ù. Fsm state machine¿¡ ´ëÇÑ ´õ ÀÚ¼¼ÇÑ ³»¿ëÀº ¼¼¼Ç 3È¸Â÷¿¡¼­ ¹è¿ï °ÍÀÔ´Ï´Ù!
+    //Áö±İÀº state°¡ 3°³»ÓÀÌÁö¸¸ 3È¸Â÷ ¼¼¼Ç¿¡¼­ Á÷Á¢ state¸¦ ´õ Ãß°¡ÇÏ´Â °úÁ¦°¡ ³ª°¥ ¿¹Á¤ÀÔ´Ï´Ù.
     [Header("Settings")]
-
-  
-
-    [SerializeField] private float moveSpeed = 20f;
-
+<<<<<<< Updated upstream
+    [SerializeField] private float moveSpeed = 5f;
+=======
+    public static float moveSpeed = 20f;
+>>>>>>> Stashed changes
     [SerializeField] private float jumpAmount = 4f;
 
     public enum State {
@@ -26,12 +26,11 @@ public class PlayerControl : MonoBehaviour {
     private float stateTime;
 
     public PlayerRenderer animator;
-    public Animator anim;
 
     public bool landed = false, moving = false;
-    //1íšŒì°¨ ê³¼ì œì—ì„œ ê³µê²© ì• ë‹ˆë©”ì´ì…˜ì„ ì¶”ê°€í•˜ê³  ì‹¶ë‹¤ë©´, ê³µê²© ì¤‘ì—ëŠ” animator.rangeAttackë¥¼ ì°¸ìœ¼ë¡œ ì„¤ì •í•˜ê±°ë‚˜, ê³µê²© ì‹œì‘ì‹œ animator.MeleeAttack()ì„ í˜¸ì¶œí•˜ì„¸ìš”.
-    //ì „ìëŠ” ì°¸ì¼ ë™ì•ˆ ì›ê±°ë¦¬ ê³µê²© ì• ë‹ˆë©”ì´ì…˜ì„, í›„ìëŠ” í˜¸ì¶œ ì‹œ ê·¼ê±°ë¦¬ ê³µê²© ì• ë‹ˆë©”ì´ì…˜ì„ ì¬ìƒí•©ë‹ˆë‹¤.
-    //êµ¬í˜„ ìì²´ëŠ” PlayerRenderer.csë¥¼ ì°¸ì¡°í•˜ì„¸ìš”.
+    //1È¸Â÷ °úÁ¦¿¡¼­ °ø°İ ¾Ö´Ï¸ŞÀÌ¼ÇÀ» Ãß°¡ÇÏ°í ½Í´Ù¸é, °ø°İ Áß¿¡´Â animator.rangeAttack¸¦ ÂüÀ¸·Î ¼³Á¤ÇÏ°Å³ª, °ø°İ ½ÃÀÛ½Ã animator.MeleeAttack()À» È£ÃâÇÏ¼¼¿ä.
+    //ÀüÀÚ´Â ÂüÀÏ µ¿¾È ¿ø°Å¸® °ø°İ ¾Ö´Ï¸ŞÀÌ¼ÇÀ», ÈÄÀÚ´Â È£Ãâ ½Ã ±Ù°Å¸® °ø°İ ¾Ö´Ï¸ŞÀÌ¼ÇÀ» Àç»ıÇÕ´Ï´Ù.
+    //±¸Çö ÀÚÃ¼´Â PlayerRenderer.cs¸¦ ÂüÁ¶ÇÏ¼¼¿ä.
     public Quaternion rotation = Quaternion.identity;
     private Rigidbody rigid;
     private Collider col;
@@ -49,13 +48,12 @@ public class PlayerControl : MonoBehaviour {
     }
 
     private void Update() {
-
-        //0. ê¸€ë¡œë²Œ ìƒí™© íŒë‹¨
+        //0. ±Û·Î¹ú »óÈ² ÆÇ´Ü
         stateTime += Time.deltaTime;
         CheckLanded();
         //insert code here...
 
-        //1. ìŠ¤í…Œì´íŠ¸ ì „í™˜ ìƒí™© íŒë‹¨
+        //1. ½ºÅ×ÀÌÆ® ÀüÈ¯ »óÈ² ÆÇ´Ü
         if (nextState == State.none) {
             switch (state) {
                 case State.idle:
@@ -73,7 +71,7 @@ public class PlayerControl : MonoBehaviour {
         }
 
 
-        //2. ìŠ¤í…Œì´íŠ¸ ì´ˆê¸°í™”
+        //2. ½ºÅ×ÀÌÆ® ÃÊ±âÈ­
         if (nextState != State.none) {
             state = nextState;
             nextState = State.none;
@@ -89,19 +87,19 @@ public class PlayerControl : MonoBehaviour {
             stateTime = 0f;
         }
 
-        //3. ê¸€ë¡œë²Œ & ìŠ¤í…Œì´íŠ¸ ì—…ë°ì´íŠ¸
+        //3. ±Û·Î¹ú & ½ºÅ×ÀÌÆ® ¾÷µ¥ÀÌÆ®
         UpdateInput();
         //insert code here...
     }
 
-    //ë•…ì— ë‹¿ì•˜ëŠ”ì§€ ì—¬ë¶€ë¥¼ í™•ì¸í•˜ê³  landedë¥¼ ì„¤ì •í•´ì£¼ëŠ” í•¨ìˆ˜
+    //¶¥¿¡ ´ê¾Ò´ÂÁö ¿©ºÎ¸¦ È®ÀÎÇÏ°í landed¸¦ ¼³Á¤ÇØÁÖ´Â ÇÔ¼ö
     private void CheckLanded() {
-        //ë°œ ìœ„ì¹˜ì— ì‘ì€ êµ¬ë¥¼ í•˜ë‚˜ ìƒì„±ì— ê·¸ êµ¬ì— ë•…ì´ ë‹¿ëŠ”ì§€ ê²€ì‚¬í•œë‹¤.
-        //1 << 6ì€ Groundì˜ ë ˆì´ì–´ê°€ 6ì´ê¸° ë•Œë¬¸.
+        //¹ß À§Ä¡¿¡ ÀÛÀº ±¸¸¦ ÇÏ³ª »ı¼º¿¡ ±× ±¸¿¡ ¶¥ÀÌ ´ê´ÂÁö °Ë»çÇÑ´Ù.
+        //1 << 6Àº GroundÀÇ ·¹ÀÌ¾î°¡ 6ÀÌ±â ¶§¹®.
         landed = Physics.CheckSphere(new Vector3(col.bounds.center.x, col.bounds.center.y - ((HEIGHT - 1f) / 2 + 0.15f), col.bounds.center.z), 0.45f, 1 << 6, QueryTriggerInteraction.Ignore);
     }
 
-    //WASD ì¸í’‹ì„ ì²˜ë¦¬í•˜ëŠ” í•¨ìˆ˜
+    //WASD ÀÎÇ²À» Ã³¸®ÇÏ´Â ÇÔ¼ö
     private void UpdateInput() {
         Vector3 move = Vector3.zero;
         moving = false;
@@ -119,16 +117,12 @@ public class PlayerControl : MonoBehaviour {
         }
         if (move.x != 0 || move.z != 0) {
             rotation = Quaternion.LookRotation(move);
-            moving = true; // ì—¬ê¸°ì—ì„œ animatorë¥¼ moveë¡œ ë°”ê¾¸ì–´ì£¼ì
-            /* ì• ë‹ˆë©”ì´ì…˜ ë°”ê¾¸ê¸° */
-            anim.SetBool("walking", true);
-
+            moving = true;
         }
-
         rigid.MovePosition(transform.position + move.normalized * Time.deltaTime * moveSpeed);
     }
 
-    //ì¹´ë©”ë¼ ê¸°ì¤€ìœ¼ë¡œ ì•ê³¼ ìš°ì¸¡ ë²¡í„°ë¥¼ ê³„ì‚°í•´ì£¼ëŠ” í•¨ìˆ˜
+    //Ä«¸Ş¶ó ±âÁØÀ¸·Î ¾Õ°ú ¿ìÃø º¤ÅÍ¸¦ °è»êÇØÁÖ´Â ÇÔ¼ö
     private Vector3 ForwardVector() {
         Vector3 v = camt.forward;
         v.y = 0;

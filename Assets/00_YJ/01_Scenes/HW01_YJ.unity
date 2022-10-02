@@ -433,12 +433,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuffaloB (1)
       objectReference: {fileID: 0}
-
     - target: {fileID: 7494585205517086228, guid: a8165fe9f9ad23442972d0df9cfba3e9, type: 3}
       propertyPath: m_TagString
       value: Animal
       objectReference: {fileID: 0}
-
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8165fe9f9ad23442972d0df9cfba3e9, type: 3}
 --- !u!4 &495846291 stripped
@@ -513,7 +511,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
-
 --- !u!4 &519451642 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5090786776354950709, guid: 07a4d86dd8263e5469d81992a802850c, type: 3}
@@ -524,7 +521,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4491101326890123594, guid: 559713a8c944e1e49b970fa3cfad3d83, type: 3}
   m_PrefabInstance: {fileID: 4491101326456233353}
   m_PrefabAsset: {fileID: 0}
-
 --- !u!1 &814434850
 GameObject:
   m_ObjectHideFlags: 0
@@ -742,12 +738,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuffaloB (3)
       objectReference: {fileID: 0}
-
     - target: {fileID: 7494585205517086228, guid: a8165fe9f9ad23442972d0df9cfba3e9, type: 3}
       propertyPath: m_TagString
       value: Animal
       objectReference: {fileID: 0}
-
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8165fe9f9ad23442972d0df9cfba3e9, type: 3}
 --- !u!4 &891065827 stripped
@@ -822,7 +816,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
-
 --- !u!1 &956348462
 GameObject:
   m_ObjectHideFlags: 0
@@ -938,7 +931,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5090786776354950709, guid: 07a4d86dd8263e5469d81992a802850c, type: 3}
   m_PrefabInstance: {fileID: 995223522}
   m_PrefabAsset: {fileID: 0}
-
 --- !u!1 &999741741
 GameObject:
   m_ObjectHideFlags: 0
@@ -1025,9 +1017,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1000243437}
   m_Layer: 0
-
   m_Name: AnimalList
-
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1302,12 +1292,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuffaloB (2)
       objectReference: {fileID: 0}
-
     - target: {fileID: 7494585205517086228, guid: a8165fe9f9ad23442972d0df9cfba3e9, type: 3}
       propertyPath: m_TagString
       value: Animal
       objectReference: {fileID: 0}
-
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8165fe9f9ad23442972d0df9cfba3e9, type: 3}
 --- !u!4 &1137605308 stripped
@@ -1581,12 +1569,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuffaloB (4)
       objectReference: {fileID: 0}
-
     - target: {fileID: 7494585205517086228, guid: a8165fe9f9ad23442972d0df9cfba3e9, type: 3}
       propertyPath: m_TagString
       value: Animal
       objectReference: {fileID: 0}
-
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8165fe9f9ad23442972d0df9cfba3e9, type: 3}
 --- !u!4 &1241392453 stripped
@@ -2098,7 +2084,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1707638092}
   m_CullTransparentMesh: 1
-
 --- !u!1001 &1949153649
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2196,7 +2181,6 @@ Transform:
   m_Father: {fileID: 956348464}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-
 --- !u!1 &1981855595
 GameObject:
   m_ObjectHideFlags: 0
@@ -2422,12 +2406,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuffaloB (5)
       objectReference: {fileID: 0}
-
     - target: {fileID: 7494585205517086228, guid: a8165fe9f9ad23442972d0df9cfba3e9, type: 3}
       propertyPath: m_TagString
       value: Animal
       objectReference: {fileID: 0}
-
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8165fe9f9ad23442972d0df9cfba3e9, type: 3}
 --- !u!4 &1995244943 stripped
@@ -5988,12 +5970,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuffaloB
       objectReference: {fileID: 0}
-
     - target: {fileID: 7494585205517086228, guid: a8165fe9f9ad23442972d0df9cfba3e9, type: 3}
       propertyPath: m_TagString
       value: Animal
       objectReference: {fileID: 0}
-
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8165fe9f9ad23442972d0df9cfba3e9, type: 3}
 --- !u!136 &3071810109966631203
@@ -6724,7 +6704,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: f12a3f0431cfacf478a61ba99a1dd233, type: 3}
-
 --- !u!1001 &4491101326456233353
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6782,7 +6761,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 559713a8c944e1e49b970fa3cfad3d83, type: 3}
-
 --- !u!1 &4678145157107436672
 GameObject:
   m_ObjectHideFlags: 0
@@ -9190,7 +9168,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
-
 --- !u!1001 &5090786776106319311
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9248,7 +9225,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07a4d86dd8263e5469d81992a802850c, type: 3}
-
 --- !u!23 &5124607715646018336
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9774,13 +9750,11 @@ GameObject:
   m_Component:
   - component: {fileID: 5528531711434788473}
   - component: {fileID: 5565298933644067527}
-
   - component: {fileID: 5565298933644067529}
   - component: {fileID: 5565298933644067528}
   - component: {fileID: 5565298933644067532}
   - component: {fileID: 5565298933644067533}
   - component: {fileID: 5565298933644067534}
-
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -10445,7 +10419,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f684215d35fd864f9e3186f1a348cc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-
   jumpAmount: 4
   state: 0
   nextState: 0
@@ -10454,7 +10427,6 @@ MonoBehaviour:
   landed: 0
   moving: 0
   rotation: {x: 0, y: 0, z: 0, w: 1}
-
 --- !u!95 &5565298933644067532
 Animator:
   serializedVersion: 4
@@ -10477,7 +10449,6 @@ Animator:
   m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!136 &5565298933644067533
 CapsuleCollider:
-
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -10491,7 +10462,6 @@ CapsuleCollider:
   m_Direction: 1
   m_Center: {x: -0.039915327, y: 2.8300877, z: 2.7357953e-11}
 --- !u!54 &5565298933644067534
-
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10507,7 +10477,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
-
 --- !u!137 &5571470425002741135
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
