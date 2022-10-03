@@ -24,6 +24,9 @@ public class GameManager : MonoBehaviour
     // 아이템 배치
     public GameObject itemList;
 
+    // 씬
+    public GameObject introUI;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,5 +47,10 @@ public class GameManager : MonoBehaviour
     void GameOver()
     {
             SceneManager.LoadScene("HW01_YJ_GameOver"); 
+    }
+
+    public void GameStart()
+    {
+        introUI.SetActive(false);
     }
 }
